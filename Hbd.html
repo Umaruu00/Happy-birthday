@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ucapan For My Girlfriend</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      width: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+    .page {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      background: 
+        linear-gradient(
+          rgba(255, 255, 255, 0.5), 
+          rgba(255, 255, 255, 0.5)
+        ),
+        url('my-photo.jpg') center/cover no-repeat;
+      background-attachment: fixed;
+    }
+    .page.active {
+      display: flex;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    img {
+      max-width: 200px;
+      margin-bottom: 20px;
+    }
+    .shake {
+      animation: gentleShake 2s infinite;
+    }
+    @keyframes gentleShake {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(1.5deg); }
+      50% { transform: rotate(0deg); }
+      75% { transform: rotate(-1.5deg); }
+      100% { transform: rotate(0deg); }
+    }
+    h2 {
+      color: #0033cc;
+      margin: 10px 0;
+      text-shadow: 1px 1px 2px #fff;
+    }
+    p {
+      color: #333;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 2px #fff;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #0033cc;
+      color: white;
+      border-radius: 20px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #0022a5;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .typewriter-container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 10px;
+      max-width: 90%;
+    }
+    .left-bar {
+      width: 4px;
+      background: #001a4d;
+      height: 100%;
+      border-radius: 5px;
+    }
+    .typewriter {
+      font-family: 'Georgia', serif;
+      white-space: pre-wrap;
+      overflow: hidden;
+      font-size: 1.1em;
+      line-height: 1.6em;
+      color: #001a4d;
+      text-align: left;
+      text-shadow: 1px 1px 2px #fff;
+    }
+    .emoji-rain {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .emoji {
+      position: absolute;
+      font-size: 24px;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-50px); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page active" id="page1">
+    <img src="birthday-cake.png" alt="cake" class="shake"/>
+    <h2>Happy Birthday sayangkuu ♡</h2>
+    <p>your next surprise is just a click away ✨</p>
+    <button onclick="nextPage()">tap &lt;3</button>
+  </div>
+  <div class="page" id="page2">
+    <img src="envelope.png" alt="envelope" class="shake"/>
+    <p style="font-size: 1.2em;">knock knock .. open me up! (∩ˆoˆ∩)♡</p>
+    <button onclick="nextPage()">open it &lt;3</button>
+  </div>
+  <div class="page" id="page3">
+    <div class="emoji-rain" id="rainContainer"></div>
+    <div class="typewriter-container">
+      <div class="left-bar"></div>
+      <div class="typewriter" id="finalMessage"></div>
+    </div>
+  </div>
+
+  <script>
+    let currentPage = 1;
+
+    function nextPage() {
+      document.getElementById('page' + currentPage).classList.remove('active');
+      currentPage++;
+      document.getElementById('page' + currentPage).classList.add('active');
+
+      if (currentPage === 3) {
+        typeWriter();
+        startEmojiRain();
+      }
+    }
+
+    const message = `🎂💌 Happy Birthday, Pinpin 💌🎂
+
+Hari ini, langit kayaknya lebih cerah. Mungkin semesta tahu, kalau hari ini adalah hari kelahiran seseorang yang begitu luar biasa: kamu, Alvina Allesia Pramesti.
+Perempuan yang bukan cuma hadir di hidupku… tapi juga ngisi setiap bagian dari diriku yang kosong sebelumnya.
+
+Setiap tahun waktu berputar, tapi tahun ini beda. Tahun ini kamu genap 16 tahun. Sweet sixteen. Usia yang katanya jadi pintu gerbang menuju kedewasaan, walaupun buatku, kamu udah dewasa jauh sebelum angka ini datang. Kedewasaanmu bukan dari umur, tapi dari caramu menghadapi hidup yang kadang keras, tapi kamu tetap lembut.
+
+Hai perempuan paling cantik, imut, dan absurd yang pernah nyasar ke hidupku…
+Selamat ulang tahun yang ke-16 yaa, my dearest Alvina Allesia Pramesti.
+
+Tau nggak? Waktu pertama kali aku kenal kamu di organisasi sekolah itu, aku nggak pernah nyangka kalau aku bakal punya seseorang kayak kamu yang nyebelin tapi ngangenin, yang suka ngambek tapi juga paling pengertian, yang clingy tapi jadi rumah paling nyaman buat aku pulang.
+Kamu itu kombinasi paling absurd dan paling sempurna kayak mie sedaap Korean Spicy Chicken yang pas banget matangnya, lengkap topping-nya, dan bikin nagih di setiap suapan, eh maksudku setiap momen sama kamu.
+Kadang kamu moody, kadang kamu marah tanpa aba-aba, kadang kamu kayak mau makan aku hidup-hidup cuma karena aku ngereply lama, tapi justru di balik itu semua, kamu perempuan paling kuat yang pernah aku temui. You’re soft, but also strong. Delicate, but fierce. Sweet, but also spicy, just like that mie tadi 😜
+
+Ada satu kutipan dari filsuf favoritku, Plato:
+"At the touch of love everyone becomes a poet."
+
+Dan bener aja, sejak kenal kamu, aku ngerasa kata-kata dalam kepala aku kayak berlomba buat nyusun puisi tentang kamu setiap hari.
+You’re not just my girlfriend, you’re the universe’s most beautiful accident that happened to me.
+
+Dan jujur, aku masih bingung gimana cara menjelaskan kamu ke dunia. Kamu tuh nggak bisa dijelasin, cuma bisa dirasain. Kayak musik, nggak selalu dimengerti, tapi selalu bikin hati tenang.
+
+Happy sweet 16, cinta.
+Semoga di usia ini, kamu makin bahagia, makin kuat, makin sayang sama diri sendiri, dan... makin sabar sama aku yang masih random dan ngeselin tiap saat 🙈
+I love you, endlessly.
+And in a world full of stars, you’re still the one that shines the brightest in my sky.
+
+— dari orang yang (katanya) kamu sayang juga ❤️
+
+Oh iya…
+Thank you for existing, thank you for being born. Dunia ini mungkin nggak sempurna, tapi kehadiranmu bikin segalanya lebih baik, at least for me.
+Teruslah tumbuh, teruslah bercahaya, dan jangan pernah ragu buat jadi diri sendiri, karena dirimu yang sekarang aja udah luar biasa banget.
+
+Dan terakhir,
+Kalau suatu hari kamu ngerasa cape, sedih, atau ngerasa dunia nggak berpihak ingat aja, ada satu orang di sudut dunia ini, yang selalu percaya bahwa kamu hebat. Dan orang itu... adalah aku.`;
+
+   let i = 0;
+    function typeWriter() {
+      if (i < message.length) {
+        document.getElementById("finalMessage").textContent += message.charAt(i);
+        i++;
+        setTimeout(typeWriter, 30);
+      }
+    }
+
+    function startEmojiRain() {
+      const emojis = ["💗","💖","💕","💘"];
+      setInterval(() => {
+        const emoji = document.createElement("div");
+        emoji.classList.add("emoji");
+        emoji.style.left = Math.random() * 100 + "vw";
+        emoji.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        document.getElementById("rainContainer").appendChild(emoji);
+        setTimeout(() => emoji.remove(), 5000);
+      }, 200);
+    }
+  </script>
+</body>
+</html>
